@@ -1,4 +1,4 @@
-NUM_OF_NUMBERS equ 40
+NUM_OF_NUMBERS	equ	40			; The number of fibonacci numbers to generate
 
 section .text
 	global main
@@ -39,7 +39,9 @@ section .text
 		jmp one_num				; goto one_num
 
 	end:
-		ret
+		mov eax, 1				; system exit
+		mov ebx, 0				; exit code 0
+		int 0x80
 
 section .data
 	line db "%d", 10, 0
